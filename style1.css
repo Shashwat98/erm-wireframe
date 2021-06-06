@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+#inside{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation:fill 0.9s ease forwards 2.8s;
+    z-index:2;
+}
+
+#inside path:nth-child(1){
+    stroke:rgb(255, 213, 00);
+    stroke-width: 2;
+    stroke-dasharray: 2454px;
+    stroke-dashoffset: 2454px;
+    animation: line-anim 2.5s ease forwards 0.3s;
+   }
+   
+#outside{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation:fill2 0.9s ease forwards 2.8s;
+    z-index:1;
+}
+
+#outside path:nth-child(1){
+    stroke: rgb(237, 28, 36);
+    stroke-width: 3;
+    stroke-dasharray: 905px;
+    stroke-dashoffset: 905px;
+    animation: line-anim 2.8s ease forwards;
+}
+
+@keyframes line-anim{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill{
+    0%{
+        fill: transparent;
+    }
+    100%{
+        fill: rgb(255, 213, 00);
+    }
+}
+
+@keyframes fill2{
+    0%{
+        fill: transparent;
+    }
+    100%{
+        fill: rgb(237, 28, 36);
+    }
+}
